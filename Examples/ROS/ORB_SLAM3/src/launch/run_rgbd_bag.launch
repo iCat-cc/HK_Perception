@@ -1,0 +1,18 @@
+<launch>
+    <!-- <include file="$(find ORB_SLAM3)/launch/rs_camera.launch"/> -->
+ 
+ 
+    <node pkg="ORB_SLAM3" type="RGBD" name="RGBD" args="/home/cc/ORB_SLAM3_DENSE_LOOP/Vocabulary/ORBvoc.txt /home/cc/ORB_SLAM3_DENSE_LOOP/Examples/RGB-D/test.yaml" output="screen"/>
+
+ 
+<node pkg="rosbag" type="play" name="rosbag_play" args="/home/cc/dataset/rgbd_dataset_freiburg1_desk.bag"/> 
+ 
+</launch>
+
+ <!--
+./Examples/RGB-D/rgbd_tum Vocabulary/ORBvoc.txt Examples/RGB-D/TUM2.yaml /home/cc/dataset/rgbd_dataset_freiburg1_desk Examples/RGB-D/associations/fr1_desk.txt
+
+rosrun ORB_SLAM3 RGBD Vocabulary/ORBvoc.txt Examples/ROS/ORB_SLAM3/Asus.yaml
+
+rosbag play /home/cc/dataset/rgbd_dataset_freiburg1_desk/rgbd_dataset_freiburg1_desk.bag
+    -->

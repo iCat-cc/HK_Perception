@@ -1,0 +1,22 @@
+<robot name="mycar">
+    <link name="base_link">
+        <visual>
+            <!-- 形状 -->
+            <geometry>
+                <!-- 长方体的长宽高 -->
+                <!-- <box size="0.5 0.3 0.1" />  -->
+                <!-- 圆柱，半径和长度 -->
+                <!-- <cylinder radius="0.5" length="0.1" /> -->
+                <!-- 球体，半径-->
+                <!-- <sphere radius="0.3" /> -->
+                <mesh filename="package://urdf01_rviz/meshes/autolabor_mini.stl"/>
+            </geometry>
+            <!-- xyz坐标 rpy翻滚俯仰与偏航角度(3.14=180度 1.57=90度) -->
+            <origin xyz="0 0 0" rpy="1.57 0 1.57" />
+            <!-- 颜色: r=red g=green b=blue a=alpha -->
+            <material name="black">
+                <color rgba="0.7 0.5 0 0.8" />
+            </material>
+        </visual>
+    </link>
+</robot>

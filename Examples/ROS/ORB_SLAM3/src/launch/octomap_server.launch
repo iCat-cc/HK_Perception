@@ -1,0 +1,17 @@
+<launch>
+  <!-- 使用的功能包的名称；启动的节点；启动后节点的名字-->
+  <node pkg="octomap_server" type="octomap_server_node" name="octomap_server">
+  <!--分辨率（米/像素） -->
+    <param name="resolution" value="0.05" />
+    <!-- name of the fixed frame, needs to be "/map" for SLAM这里需要和发布的点云地图中的frameid一致 -->
+    <param name="frame_id" type="string" value="/odom" />
+    <!-- max range / depth resolution of the kinect in meter超出100的读数，它的值用100代替 -->
+    <param name="sensor_model/max_range" value="100.0" />
+    <param name="latch" value="true" />
+    <!-- max/min height for occupancy map, should be in meters -->
+    <param name="pointcloud_max_z" value="1000" />
+    <param name="pointcloud_min_z" value="0" />
+    <!-- 让节点订阅点云地图发布的话题 -->
+    <remap from="/cloud_in" to="/orbslam3_dense/output" />
+    </node>
+</launch>

@@ -1,0 +1,9 @@
+<launch>
+  <node pkg="nodelet" type="nodelet" name="nodelet_manager"  args="manager" output="screen"/>
+ 
+  <node pkg="nodelet" type="nodelet" name="nodeletclass1" args="load aaa/nodeletclass1 nodelet_manager" output="screen">
+  </node>
+
+  <!-- display in Rviz -->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find base_nodelet)/config/HikCamera.rviz"/>
+</launch>
